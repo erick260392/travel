@@ -15,9 +15,9 @@ export default function Navbar() {
           <div className="toggle"></div>
         </div>
         <ul>
-          <li><a href="#home">Home</a></li>
+          <li><a href="#hero">Home</a></li>
           <li><a href="#services">Servicios</a></li>
-          <li><a href="#recommendes">Lugares</a></li>
+          <li><a href="#recommend">Lugares</a></li>
           <li><a href="#testimonials">Testimonios</a></li>
         </ul>
         <button>Conectar</button>

@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Destination1 from '../assets/Destination1.png';
 import Destination2 from '../assets/Destination2.png';
@@ -11,63 +11,196 @@ import info2 from '../assets/info2.png';
 import info3 from '../assets/info3.png';
 
 
- 
+
 
 export default function Recommended() {
 
-  const data =[
+  const data = [
     {
-      image:Destination1,
-      title:'Singapure',
-      subtitle:'Singapure es la capital de la republica de Singapure',
-      cost:'38,000',
+      image: Destination1,
+      title: 'Singapure',
+      subtitle: 'Singapure es la capital de la republica de Singapure',
+      cost: '38,000',
       duration: 'Dos noches y dos Dias',
     },
     {
-      image:Destination2,
-      title:'Thailand',
-      subtitle:'Thailand es un Lugar del Sureste Asiatico, Este lugar es para ti lo sabes',
-      cost:'54,200',
-      duration:'Dos, noches y dos Dias',
+      image: Destination2,
+      title: 'Thailand',
+      subtitle: 'Thailand es un Lugar del Sureste Asiatico, Este lugar es para ti lo sabes',
+      cost: '54,200',
+      duration: 'Dos, noches y dos Dias',
     },
     {
-      image:Destination3,
-      title:'Paris',
-      subtitle:'Paris, es la capital de francia y la mayor de Europa',
-      cost:'45,000',
-      duration:'Dos noches',
+      image: Destination3,
+      title: 'Paris',
+      subtitle: 'Paris, es la capital de francia y la mayor de Europa',
+      cost: '45,000',
+      duration: 'Dos noches',
     },
     {
-      image:Destination4,
-      title:'New Zealand',
-      subtitle:'Nueva zelanda es una instala dentro de un Pais',
-      cost:'45,000',
-      duration:'Un dia y una Noche',
+      image: Destination4,
+      title: 'New Zealand',
+      subtitle: 'Nueva zelanda es una instala dentro de un Pais',
+      cost: '45,000',
+      duration: 'Un dia y una Noche',
     },
     {
-      image:Destination5,
-      title:'Bora Bora',
-      subtitle:'Bora Bora es una pequeña isla en el sureste del pacifico de Northwest',
-      cost:'95,000',
-      duration:'Dos dias y Dos noches',
+      image: Destination5,
+      title: 'Bora Bora',
+      subtitle: 'Bora Bora es una pequeña isla en el sureste del pacifico de Northwest',
+      cost: '95,000',
+      duration: 'Dos dias y Dos noches',
     },
     {
-      image:Destination6,
-      title:'London',
-      subtitle:'London es la capital de Inglaterra',
-      cost:'38,000',
-      duration:'Tres dias y Dos noches',
+      image: Destination6,
+      title: 'London',
+      subtitle: 'London es la capital de Inglaterra',
+      cost: '38,000',
+      duration: 'Tres dias y Dos noches',
     }
   ]
 
-  const packages =[
-    'El escape de Fin de Semana',
-    'El paquete Navideño',
-    'El tour grupal',
-    'Viaje para que te reecuentres Contigo mismo',
+  const packages = [
+    'El Escape de Fin de Semana',
+    'El Paquete Navideño',
+    'El Tour grupal',
+    'Viaje Reencuentro Contigo mismo',
   ]
 
+  const [active, setActive] = useState(1);
+
+
+
+
   return (
-    <div></div>
+
+    <Section id="recommend">
+
+      <div className='title'>
+        <h2>Destinos Recomendados</h2>
+      </div>
+      <div className="packages">
+        <ul>
+          {packages.map((pkg, index) => {
+            return (
+              <li
+                className={active === index + 1 ? "active" : ""}
+                onClick={() => setActive(index + 1)}
+              >
+                {pkg}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="destinations">
+        {data.map((destination) => {
+          return (
+            <div className="destination">
+              <img src={destination.image} alt="" />
+              <h3>{destination.title}</h3>
+              <p>{destination.subtitle}</p>
+              <div className="info">
+                <div className="services">
+                  <img src={info1} alt="" />
+                  <img src={info2} alt="" />
+                  <img src={info3} alt="" />
+                </div>
+                <h4>{destination.cost}</h4>
+              </div>
+              <div className="distance">
+                <span>1000 Kms</span>
+                <span>{destination.duration}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </Section>
   )
 }
+
+const Section = styled.section`
+padding: 2rem 0;
+.title {
+  text-align: center;
+}
+.packages {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  ul {
+    display: flex;
+    list-style-type: none;
+    width: max-content;
+    li {
+      padding: 1rem 2rem;
+      border-bottom: 0.1rem solid black;
+    }
+    .active {
+      border-bottom: 0.5rem solid #8338ec;
+    }
+  }
+}
+.destinations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 0 3rem;
+  .destination {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: #8338ec14;
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      transform: translateX(0.4rem) translateY(-1rem);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    img {
+      width: 100%;
+    }
+    .info {
+      display: flex;
+      align-items: center;
+      .services {
+        display: flex;
+        gap: 0.3rem;
+        img {
+          border-radius: 1rem;
+          background-color: #4d2ddb84;
+          width: 2rem;
+          /* padding: 1rem; */
+          padding: 0.3rem 0.4rem;
+        }
+      }
+      display: flex;
+      justify-content: space-between;
+    }
+    .distance {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  .packages {
+    ul {
+      li {
+        padding: 0 0.5rem;
+        font-size: 2vh;
+        padding-bottom: 1rem;
+      }
+      .active {
+        border-bottom-width: 0.3rem;
+      }
+    }
+  }
+  .destinations {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+}
+`;
