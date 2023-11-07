@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Recommended from './components/Recommended'
-import Testomonials from './components/Testomonials'
+import Testimonials from './components/Testimonials'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
       <Hero />
       <Services/>
       <Recommended />
-      <Testomonials />
+      <Testimonials />
       <Footer />
 
     </>
