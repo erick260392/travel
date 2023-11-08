@@ -1,27 +1,39 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 import { BsLinkedin, BsFacebook } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
-
 export default function Footer() {
   return (
     <FooterContainer>
-      <span>Copyright &copy; 2023 AlexisTravel. Todos los derechos Reservados</span>
-      <ul className='links'>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#services">Servicios</a></li>
-        <li><a href="#recommend">Lugares</a></li>
-        <li><a href="#testimonials">Testimonios</a></li>
+      <span>Copyright &copy; 2021 AlexisTravel. Todos los derechos Reservados</span>
+      <ul className="links">
+        <li>
+          <a href="#hero">Home</a>
+        </li>
+        <li>
+          <a href="#services">Servicios</a>
+        </li>
+        <li>
+          <a href="#recommend">Lugares</a>
+        </li>
+        <li>
+          <a href="#testimonials">Testimonios</a>
+        </li>
       </ul>
-      <ul className="social_links">
-        <li><BsFacebook /></li>
-        <li><BsLinkedin /></li>
-        <li><AiFillInstagram /></li>
+      <ul className="social__links">
+        <li>
+          <BsFacebook />
+        </li>
+        <li>
+          <AiFillInstagram />
+        </li>
+        <li>
+          <BsLinkedin />
+        </li>
       </ul>
     </FooterContainer>
-  )
+  );
 }
-
 
 const FooterContainer = styled.footer`
   display: flex;
