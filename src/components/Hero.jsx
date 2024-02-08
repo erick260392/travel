@@ -12,8 +12,12 @@ export default function Hero() {
       <div className="content">
         <div className="title">
           <h1>VIAJA Y EXPLORA</h1>
+          <h3>¡Bienvenido a AlexisTravel!</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. At quia sapiente nostrum atque voluptatum repudiandae tempore id quibusdam, non nemo nulla reprehenderit commodi iste ut voluptates culpa distinctio iusto vel?
+          Descubre el mundo a través de experiencias inolvidables con nosotros. En Alexis Travel, no simplemente organizamos viajes, creamos momentos que perduran en el tiempo. Nos enorgullece ofrecer no solo destinos asombrosos, sino también la promesa de aventuras que trascienden las expectativas.
+          </p>
+          <p>
+          Sumérgete en un universo de posibilidades donde cada viaje es una historia única por contar. Nuestro equipo apasionado está dedicado a diseñar itinerarios que no solo te llevan a destinos excepcionales, sino que también capturan la esencia y la autenticidad de cada lugar que exploramos.
           </p>
         </div>
         <div className="search">
@@ -68,6 +72,7 @@ height:100%;
     h1{
       font-size:3rem;
       letter-spacing:0.2rem;
+      margin-bottom:0.5rem;
     }
     p{
       text-align:center;
